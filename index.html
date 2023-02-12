@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>RelógioRegressivo</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js" defer></script>
+
+  <div id="demotext">FIM DE CONTRATO EM...</div>
+
+</head>
+  
+<body>
+  <div id="subtitulo">
+    <div class="box" id="day">DIAS</div>
+    <div class="box" id="hour">HORAS</div>
+    <div class="box" id="minutes">MINUTOS</div>
+    <div class="box" id="seconds">SEGUNDOS</div>
+  </div>
+    
+  <div id="countdown">
+    <div id="dias">0</div>
+    <div id="horas">0</div>
+    <div id="minutos">0</div>
+    <div id="segundos">0</div>
+  </div>
+  
+  <header class="header" id="img">
+    <a href=https://www.gifs-animados.net/corinthians-3d.htm><img border=0
+      src=http://lh3.ggpht.com/-Jg36wjXn5gU/Y04IWnhbHPI/AAAAAAAAGNc/S9TR_EJNjgUwLeLsPkPsA19wqFioMD_zQCNcBGAsYHQ/s0/corinthians-02.gif></a>
+  </header>  
+  
+  <script>
+    var dataFutura = new Date("December 01,2023 08:00").getTime();
+
+    var dias, horas, minutos, segundos;
+    function setValores(e) {
+      return document.getElementById(e);
+    }
+
+    setInterval(function () {
+      var dataAtual = new Date().getTime();
+
+      var segundosTotal = (dataFutura - dataAtual) / 1000;
+
+      dias = parseInt(segundosTotal / 86400);
+      segundosTotal = segundosTotal % 86400;
+
+      horas = parseInt(segundosTotal / 3600);
+      segundosTotal = segundosTotal % 3600;
+
+      minutos = parseInt(segundosTotal / 60);
+      segundos = parseInt(segundosTotal % 60);
+
+      setValores("dias").innerHTML = dias;
+      setValores("horas").innerHTML = horas;
+      setValores("minutos").innerHTML = minutos;
+      setValores("segundos").innerHTML = segundos;
+    }, 1000);
+
+  </script>
+  <audio src="Sabe eu nasci corinthiano Rodrigo Cardoso.mp3" autoplay muted controls loop>
+    Seu Browser não tem suporte a tag audio
+  </audio>
+</body>
+
+</html>
